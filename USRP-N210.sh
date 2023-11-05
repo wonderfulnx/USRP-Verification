@@ -60,6 +60,7 @@ array_prepare_for_picoscenes wlp4s0 "2512 HT20"
 ###    Check the ps.txt file and search RxFrame to get packet reception rate, when working in non-standard frequencies, should be very high (given that the channel is pretty good).
 ###    PS may say that calibration files are not found, which is not true... It indeed found and used them, but the warning exists anyway...
 ###    Don't forget about pluging the antenna.
+###    N210 has two receiving antennas, you can switch the testing antenna by changing --rx-ant TX/RX to --rx-ant RX2
 PicoScenes "-d debug;
             -i usrp192.168.10.2 --freq 2512e6 --rate 20e6          --mode logger --rx-cbw 20 --rx-ant TX/RX;
             -i wlp4s0           --freq 2512e6 --rate 20e6 --txcm 1 --mode injector --cbw 20 --coding ldpc --mcs 5 --repeat 1000 --delay 20000 --txpower 0;
