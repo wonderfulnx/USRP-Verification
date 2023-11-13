@@ -15,6 +15,7 @@
 ### 1. Set socket buffer
 sudo sysctl -w net.core.wmem_max=50000000
 sudo sysctl -w net.core.rmem_max=50000000
+sudo sysctl -w kernel.shmmax=2147483648
 ### 2. Set the MTU of the USRP's eth connection to 9000 (automatic is not accepted)
 ### 3. Check and Set the ring buffer of the eth, make sure it's set to max
 ethtool -g <eth_interface> # check
