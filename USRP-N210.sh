@@ -36,6 +36,8 @@ sudo ./usrp_list_sensors
 sudo ./tx_waveforms --freq 2422e6 --rate 5e6 --gain 30
 uhd_fft -A TX/RX -s 25e6 -g 30 -f 2422e6 --otw-format sc16
 uhd_fft -A TX/RX -s 50e6 -g 30 -f 2422e6 --otw-format sc8
+### 4. Latency test
+sudo ./latency_test --args="addr=192.168.20.2,recv_frame_size=256" --nsamps=256 --nruns=1000 --rtt=0.001 --rate=25e6 --from-eob --verbose
 ### Some note
 ### - N210 has the bandwidth ability of 25MHz (25Msps) at 16 bit sampling depth and 50MHz (50Msps) at 8 bit depth, no matter the daughter board is SBX or UBX
 
