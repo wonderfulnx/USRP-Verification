@@ -26,7 +26,7 @@ ethtool -G <interface> rx 4096 tx 4096 # 4096 corresponds to the max value seen 
 uhd_usrp_probe
 ### 2. Test with uhd benchmarks and examples
 cd /usr/lib/uhd/examples
-sudo ./benchmark_rate --rx_rate 125e6 --tx_rate 125e6 --tx_otw sc16 --rx_otw sc16
+sudo ./benchmark_rate --rx_rate 125e6 --tx_rate 125e6 --tx_otw sc16 --rx_otw sc16 --rx_subdev "A:0" --tx_subdev "A:0" # Change A:0 to A:1 B:0 and B:1 to test all four streams
 sudo ./test_dboard_coercion --tx 2512e6 --rx 2512e6
 sudo ./test_messages
 sudo ./test_timed_commands
